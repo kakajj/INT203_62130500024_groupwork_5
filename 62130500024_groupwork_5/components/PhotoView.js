@@ -1,6 +1,6 @@
 app.component('photo-view', {
     props: {
-        pic:Object,
+        pic: Object,
     },
     template:
         /*html*/
@@ -34,13 +34,11 @@ app.component('photo-view', {
     </div>
     `,
     data() {
-        return {
-
-        }
+        return {}
     },
     methods: {
-        switchModal(name){
-            this.$emit('switchModal',name);
+        switchModal(name) {
+            this.$emit('switchModal', name);
         }
     }
 });
