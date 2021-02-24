@@ -23,22 +23,17 @@
 <body class="bg-black bg-scroll bg-repeat-y ">
     <div id="app" class="w-screen ">
         <h1 class="text-center pt-10 text-5xl text-white">🌟 BLACKPINK IS THE REVOLUTION🌟 </h1>
-        <h1 class="text-center text-3xl p-3 text-white">Like Pics (<span class="animate-pulse ">{{picCount}}</span>)</h1>
+        <h1 class="text-center text-3xl p-3 text-white">Like Pics (<span class="animate-pulse ">{{picCount}}</span>)
+        </h1>
         <div class="flex flex-row justify-center">
             <div v-for="h in heartCount">
                 <div class="text-5xl pb-4 transform scale-75 animate-pulse">{{h}}</div>
             </div>
         </div>
 
-        <div class="text-center bg-pink-100 w-8/12 mx-auto transform transition duration-100 hover:scale-105">
-            <span v-if="isSearch" class="material-icons py-1 w-full" @click="startSearch">search</span>
-            <div v-else class="w-full flex flex-row justify-center py-1">
-                <input class=" border-2 w-full focus:outline-none focus:ring focus:border-black text-3xl"
-                    v-model="searchField" type="text" placeholder="Enter keyword...">
-                <button @click="cancelSearch" class="material-icons hover:text-pink-500 transition duration-500">cancel</button>
-            </div>
-        </div>
-
+        <!-- Photo Search -->
+        <photo-search :search="isSearch" v-model:s-field="searchField" @start-search="startSearch" @cancel-search="cancelSearch"></photo-search>
+        
         <div class="container mx-auto w-screen  my-8 bg-pink-200">
             <div class="grid grid-cols-4 text-center " v-if="filteredList.length !== 0">
                 <div class="my-6" v-for="(pic,i) in filteredList">
@@ -102,11 +97,16 @@
 
 
     </div>
-    </div>
+
     <!-- my main.js -->
-
     <script src="./main.js"></script>
-
+    <script src="./components/PhotoItem.js"></script>
+    <script src="./components/PhotoSearch.js"></script>
+    <script src="./components/PhotoView.js"></script>
 </body>
+
+<script>
+    const mountedApp = app.mount('#app');
+</script>
 
 </html>

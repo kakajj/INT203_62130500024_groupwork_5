@@ -1,4 +1,4 @@
-const app = {
+const app = Vue.createApp({
     data(){
         return{
             pics:[
@@ -58,6 +58,4 @@ const app = {
             this.pics[index].showModal = !this.pics[index].showModal;
           }
     }
-};
-
-Vue.createApp(app).mount('#app');
+});
