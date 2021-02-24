@@ -33,10 +33,10 @@
 
         <!-- Photo Search -->
         <photo-search :search="isSearch" v-model:s-field="searchField" @start-search="startSearch" @cancel-search="cancelSearch"></photo-search>
-        
+        <!-- Photo Item -->
         <div class="container mx-auto w-screen  my-8 bg-pink-200">
             <div class="grid grid-cols-4 text-center " v-if="filteredList.length !== 0">
-                <div class="my-6" v-for="(pic,i) in filteredList">
+                <div class="my-6" v-for="pic in filteredList">
 
                     <div class="bg-white rounded h-full text-grey-darkest no-underline shadow-md w-10/12 mx-auto
                                 transform h-64 w-1/5 transition duration-500 hover:scale-105">
@@ -61,34 +61,8 @@
                             </svg>
                         </div>
                     </div>
-
-                    <div v-if="pic.showModal"
-                        class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex bg-black bg-opacity-95">
-                        <div class="relative w-auto my-6 mx-auto max-w-6xl">
-                            <!--content-->
-                            <div
-                                class="border-0 rounded-lg shadow-lg relative flex flex-col w-full outline-none focus:outline-none">
-                                <!--header-->
-                                <div class="flex items-start justify-center pt-5  text-center space-x-4">
-                                    <h3 class="text-3xl font-semibold text-pink-300">
-                                        {{pic.name}}
-                                    </h3>
-                                    <button v-on:click="toggleModal(pic.name)">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                            class="bg-transparent text-black w-8 h-8 block outline-none focus:outline-none fill-current text-pink-300 cursor-pointer hover:text-white transition duration-500">
-                                            <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 
-                                12 12 12 12-5.373 12-12-5.373-12-12-12zm5 15.538l-3.592-3.548 3.546-3.587-1.416-1.403-3.545 3.589-3.588-3.543-1.405 
-                                1.405 3.593 3.552-3.547 3.592 1.405 1.405 3.555-3.596 3.591 3.55 1.403-1.416z" />
-                                        </svg>
-                                    </button>
-                                </div>
-                                <!--body-->
-                                <div class="relative p-6 flex-auto w-9/12 mx-auto">
-                                    <img v-bind:src="pic.url">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- Photo View -->
+                    <photo-view :pic="pic" @switch-modal="toggleModal"></photo-view>
                     <div v-if="showModal" class="opacity-25 fixed inset-0 z-40 bg-black"></div>
                 </div>
             </div>
