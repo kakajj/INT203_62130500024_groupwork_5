@@ -6,9 +6,9 @@ app.component('photo-item', {
         /*html*/
         `
                     <div class="bg-white rounded h-full text-grey-darkest no-underline shadow-md w-10/12 mx-auto
-                                transform h-64 w-1/5 transition duration-500 hover:scale-105">
+                                transform transition duration-500 hover:scale-105">
                         <h1 class="text-2xl py-1">-{{pic.name}}-</h1>
-                        <img class="block rounded-b" v-bind:src="pic.url">
+                        <img class="block rounded-b object-cover h-96 w-full" v-bind:src="pic.url">
                         <div class="flex flex-row justify-start content-center space-x-4 p-2 w-9/12">
                             <svg v-if="pic.like" class="w-2/12 fill-current text-pink-500 cursor-pointer"
                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" @click="likePic(pic.name)">

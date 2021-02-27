@@ -26,8 +26,8 @@ app.component('photo-view', {
                     </button>
                 </div>
                 <!--body-->
-                <div class="relative p-6 flex-auto w-9/12 mx-auto">
-                    <img v-bind:src="pic.url">
+                <div class="relative p-6 flex-auto mx-auto w-9/12">
+                    <img class="" v-bind:src="pic.url">
                 </div>
             </div>
         </div>

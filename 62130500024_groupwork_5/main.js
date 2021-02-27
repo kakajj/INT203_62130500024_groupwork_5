@@ -9,7 +9,11 @@ const app = Vue.createApp({
                 {name:"Rose HowYouLikeThat",url:"./images/h3.jpg",  like:false,showModal:false},
                 {name:"Lisa HowYouLikeThat",url:"./images/h4.jpg",  like:false,showModal:false},
                 {name:"Jennie HowYouLikeThat",url:"./images/h1.jpg",like:false,showModal:false},
-                {name:"Jisoo HowYouLikeThat",url:"./images/h2.jpg", like:false,showModal:false}
+                {name:"Jisoo HowYouLikeThat",url:"./images/h2.jpg", like:false,showModal:false},
+                {name:"Lisa SummerDiary",url:"./images/5.jpg",  like:false,showModal:false},
+                {name:"Rose SummerDiary",url:"./images/6.jpg",  like:false,showModal:false},
+                {name:"Jennie SummerDiary",url:"./images/7.jpg",like:false,showModal:false},
+                {name:"Jisoo SummerDiary",url:"./images/8.jpg", like:false,showModal:false}
             ],
             heart:[""],
             searchField:'',
@@ -29,9 +33,13 @@ const app = Vue.createApp({
             return this.heart;
         },
         filteredList(){
-            return this.pics.filter(pic => {
+            let Arr =  this.pics.filter(pic => {
                 return pic.name.toLowerCase().includes(this.searchField.toLowerCase())
               });
+            console.log(Arr[Math.floor(Math.random()*Arr.length)])
+                return Arr;
+            ;
+            
         },
     },
     methods:{

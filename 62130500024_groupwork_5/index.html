@@ -2,22 +2,22 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blackpink in your area</title>
-    <!-- https://google.github.io/material-design-icons/#icon-font-for-the-web -->
-    <!-- Using via Google Web Fonts -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-    <!-- https://tailwindcss.com/docs/installation -->
-    <!-- Using Tailwind via CDN -->
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
-    <!-- https://v3.vuejs.org/guide/installation.html#release-notes -->
-    <!-- Vue CDN -->
-    <script src="https://unpkg.com/vue@next"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
-    <link href="https://cdn.iconmonstr.com/1.3.0/css/iconmonstr-iconic-font.min.css" rel="stylesheet" />
-    <script src='https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js'></script>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Blackpink in your area</title>
+        <!-- https://google.github.io/material-design-icons/#icon-font-for-the-web -->
+        <!-- Using via Google Web Fonts -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <!-- https://tailwindcss.com/docs/installation -->
+        <!-- Using Tailwind via CDN -->
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+        <!-- https://v3.vuejs.org/guide/installation.html#release-notes -->
+        <!-- Vue CDN -->
+        <script src="https://unpkg.com/vue@next"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+        <link href="https://cdn.iconmonstr.com/1.3.0/css/iconmonstr-iconic-font.min.css" rel="stylesheet" />
+        <script src='https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js'></script>
 </head>
 
 <body class="bg-black bg-scroll bg-repeat-y ">
@@ -32,6 +32,8 @@
             </div>
         </div>
         <!-- End Header -->
+
+        
         <!-- Photo Search -->
         <photo-search :search="isSearch" v-model:s-field="searchField" @start-search="startSearch"
             @cancel-search="cancelSearch"></photo-search>
